@@ -3,10 +3,7 @@ package user;
 import account.Account;
 import contact.Contact;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 import role.Role;
 import transaction.Transaction;
 import java.io.Serializable;
@@ -16,6 +13,7 @@ import java.util.List;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
 @Entity
 @Table(name = "USERS")
 public class User implements Serializable {
