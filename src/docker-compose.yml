@@ -3,8 +3,8 @@ services:
     container_name: postgres-sql
     image: postgres
     environment:
-      POSTGRES_USER: alibou
-      POSTGRES_PASSWORD: alibou
+      POSTGRES_USER: oumaa
+      POSTGRES_PASSWORD: oumaapass
       PGDATA: /data/postgres
     volumes:
       - postgres:/data/postgres
