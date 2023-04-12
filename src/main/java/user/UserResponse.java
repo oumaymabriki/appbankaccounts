@@ -12,4 +12,6 @@ public class UserResponse {
     private String firsname;
     private String lastname;
     private String email;
+    private String iban;
+    private boolean active;
 }

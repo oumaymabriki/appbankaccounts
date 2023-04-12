@@ -8,6 +8,7 @@ import role.Role;
 import transaction.Transaction;
 import java.io.Serializable;
 import java.util.List;
+import java.util.stream.DoubleStream;
 
 @Getter
 @Setter

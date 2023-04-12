@@ -11,7 +11,11 @@ import java.io.Serializable;
 @NoArgsConstructor
 @Builder
 public class UserRequest {
-    @NotNull(message="id should not be null")
+
     private Integer id;
+    private String fistrname;
+    private String lastname;
+    private String email;
+    private String password;
 
 }
