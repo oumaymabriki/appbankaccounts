@@ -16,7 +16,7 @@ import java.io.Serializable;
 public class Account implements Serializable{
     @Id
     @GeneratedValue
-    private Integer id;
+    public Integer id;
     @Column(unique = true)
     private String iban;
     @OneToOne

@@ -1,12 +1,16 @@
 package contact;
 
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotNull;
 import lombok.*;
 
 @Builder
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class ContactRequest { private Integer id;
+public class ContactRequest {
+
+    private Integer id;
     @NotNull(message = "First name is mandatory")
     private String firstname;
     @NotNull(message = "Last name is mandatory")

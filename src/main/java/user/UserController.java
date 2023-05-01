@@ -12,7 +12,8 @@ import java.util.List;
 @RequestMapping("api/v1/user")
 public class UserController {
     @Autowired
-    private UserService userService;
+    private
+    UserService userService;
 
     @PostMapping
     public Integer save(@RequestBody UserRequest userRequest){

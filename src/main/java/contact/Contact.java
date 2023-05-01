@@ -1,15 +1,11 @@
 package contact;
-
 import jakarta.persistence.*;
 import jdk.incubator.vector.VectorOperators;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import user.User;
-
 import java.io.Serializable;
-@Data
+@Getter
+@Setter
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
