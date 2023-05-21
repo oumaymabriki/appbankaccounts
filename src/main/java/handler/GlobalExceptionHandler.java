@@ -33,12 +33,14 @@ public class GlobalExceptionHandler {
     }
 
     @ExceptionHandler(OperationNotPermettedException.class)
-    @ResponseStatus(HttpStatus.METHOD_NOT_ALLOWED)
+    @ResponseStatus(HttpStatus.NOT_ACCEPTABLE)
     public ExceptionResponse handle (OperationNotPermettedException exp){
         return ExceptionResponse
                 .builder()
                 .ErrorMsg(exp.getMessage())
                 .build();
     }
+
+
 
 }

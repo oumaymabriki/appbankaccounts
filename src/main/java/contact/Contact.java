@@ -1,6 +1,8 @@
 package contact;
 import jakarta.persistence.*;
 
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotNull;
 import lombok.*;
 import user.User;
 import java.io.Serializable;
@@ -18,10 +20,13 @@ public class Contact implements Serializable {
     private String firstname;
     private String lastname;
     @Column(unique = true)
+
     private String email;
     @Column(unique = true)
+
     private String iban;
     @ManyToOne
     @JoinColumn(name = "user_id")
+
     private User user;
 }
