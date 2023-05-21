@@ -27,6 +27,7 @@ public class User implements Serializable {
     private String email;
     private String password;
     private boolean active;
+    private String iban;
     @OneToMany(mappedBy = "user_id")
     private List<Contact> contacts;
     @OneToOne

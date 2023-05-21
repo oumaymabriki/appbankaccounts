@@ -5,25 +5,22 @@ import org.springframework.stereotype.Component;
 @Component
 public class UserMapper {
    public User ToUser(UserRequest request){
-       return User
+       return User.builder()
                .id(request.getId())
-               .firstname(request.getFistrname())
+               .firstName(request.getFistrname())
                .lastname(request.getLastname())
                .email(request.getEmail())
                .password(request.getPassword())
-               .builder()
                .build();
    }
    public UserResponse ToResponse(User user){
-       return UserResponse
+       return UserResponse.builder()
                .id(user.getId())
-               .firstname(user.getFirstName())
+               .firsname(user.getFirstName())
                .lastname(user.getLastname())
                .email(user.getEmail())
-               .password(user.getPassword())
-               .iban(user.getAccount().getIban())
+               .iban(user.getIban())
                .active(user.isActive())
-               .builder()
                .build();
    }
 }

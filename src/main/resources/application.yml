@@ -1,0 +1,21 @@
+server:
+  port: 8080
+spring:
+  profiles:
+    active: docker
+  #activate docker profile or qa profile
+  datasource:
+    url: jdbc:postgresql://localhost:5432/bank_db
+    username: username
+    password: password
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: create
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+    database: postgresql
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+

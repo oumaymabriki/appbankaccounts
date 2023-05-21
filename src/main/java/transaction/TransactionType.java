@@ -1,6 +1,6 @@
 package transaction;
 
-public enum EnemuratedType {
+public enum TransactionType {
     TRANSFER,
     DEPOSIT,
 }

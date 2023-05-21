@@ -19,8 +19,5 @@ public class ContactController {
     public Integer save(@RequestBody  ContactRequest contactRequest){
         return contactService.saveContact(contactRequest);
     }
-    @GetMapping()
-    public ResponseEntity<List<ContactResponse>> findall(){
-        return ResponseEntity.ok(contactService.allContact());
-    }
+
 }

@@ -24,7 +24,7 @@ public class Transaction implements Serializable {
     private String destination;
     private LocalDate transactionDate;
     @Enumerated(EnumType.STRING)
-    private EnemuratedType type;
+    private TransactionType type;
     @ManyToOne
     @JoinColumn(name = "user_id")
     private User user;

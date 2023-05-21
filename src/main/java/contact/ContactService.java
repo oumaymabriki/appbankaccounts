@@ -19,8 +19,8 @@ public class ContactService {
 
     return contactRepository.save(mapper.ToContact(contactRequest)).getId();
   }
-    public  List<ContactResponse> allContact (){
-      return (List<ContactResponse>) contactRepository.findAll()
+    public  List<ContactResponse> allContactByUserId (Integer userId){
+      return (List<ContactResponse>) contactRepository.findAllByUserId(userId)
               .stream()
               .map(mapper::ToResponse)
               .collect(Collectors.toList());

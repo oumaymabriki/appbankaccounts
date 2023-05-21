@@ -11,6 +11,4 @@ public class ObjectToValidateExeption extends RuntimeException {
     @Getter
     private final String errorsSource;
 
-
-
 }

@@ -1,7 +1,8 @@
 package transaction;
 
-import jakarta.persistence.criteria.CriteriaBuilder;
 import lombok.*;
+
+import java.math.BigDecimal;
 
 @Getter
 @Setter
@@ -9,6 +10,8 @@ import lombok.*;
 @NoArgsConstructor
 @Builder
 public class TransactionResponse {
-    private Integer id;
-    private String Iban;
+    private Integer userId;
+    private BigDecimal amount;
+    private String DestinationIban;
+    private TransactionType Type;
 }

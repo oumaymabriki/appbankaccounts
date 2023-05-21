@@ -1,6 +1,6 @@
 package contact;
 import jakarta.persistence.*;
-import jdk.incubator.vector.VectorOperators;
+
 import lombok.*;
 import user.User;
 import java.io.Serializable;
