@@ -5,6 +5,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
+import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 @AllArgsConstructor
@@ -28,9 +30,13 @@ public class TransactionService {
     private int getTransactionMultiplier(TransactionType type){
         return TransactionType.TRANSFER == type ? -1 : 1;
     }
-     /* public List<TransactionResponse> getAllTransaction(){
-        return transactionRepository.findAll()
+
+    public List<TransactionResponse> findByIdUser(Integer userId) {
+
+        return (List<TransactionResponse>) transactionRepository.findById(userId)
                 .stream()
-                .map(mapper::)
-    }*/
+                .map(mapper::ToResponse)
+                .collect(Collectors.toList());
+    }
+
 }

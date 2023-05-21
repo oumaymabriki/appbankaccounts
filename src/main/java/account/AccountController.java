@@ -2,6 +2,7 @@ package account;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -27,7 +28,10 @@ public class AccountController {
         return accountService.getAccountById(account_id);
     }
     @DeleteMapping("/{account_id}")
-    public void delete(@PathVariable Integer account_id){
+    @ResponseStatus(HttpStatus.ACCEPTED)
+    public ResponseEntity<Void> findById(@PathVariable Integer account_id){
         accountService.deleteAccount(account_id);
+
+        return null;
     }
 }

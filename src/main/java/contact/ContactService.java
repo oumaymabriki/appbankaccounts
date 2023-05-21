@@ -19,14 +19,14 @@ public class ContactService {
 
     return contactRepository.save(mapper.ToContact(contactRequest)).getId();
   }
-    public  List<ContactResponse> allContactByUserId (Integer userId){
+    public  List<ContactResponse> findAllByUserId (Integer userId){
       return (List<ContactResponse>) contactRepository.findAllByUserId(userId)
               .stream()
               .map(mapper::ToResponse)
               .collect(Collectors.toList());
   }
 
-    public  ContactResponse contactById(Integer id){
+    public  ContactResponse findById(Integer id){
       return contactRepository.findById(id)
               .map(mapper::ToResponse)
               .orElseThrow(() -> new EntityNotFoundException("this entity not found with " +id));

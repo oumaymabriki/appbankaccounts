@@ -9,11 +9,9 @@ import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("api/v1/user")
+@RequestMapping("api/v1/users")
 public class UserController {
-    @Autowired
-    private
-    UserService userService;
+    private final UserService userService;
 
     @PostMapping
     public Integer save(@RequestBody UserRequest userRequest){
@@ -24,7 +22,18 @@ public class UserController {
         return userService.getAll() ;
     }
     @GetMapping("/{user_id}")
-    public UserResponse getUser(@PathVariable Integer user_id){
+    public UserResponse getUser(@PathVariable Integer user_id)
+    {
         return userService.getUserById(user_id);
+
+    }
+    @PatchMapping("/activate/{user-id}")
+    public Integer validate(@PathVariable("user-id") Integer id){
+      return userService.ValidateAccount(id);
+    }
+
+    @PatchMapping("/inactivate/{user-id}")
+    public Integer Invalidate(@PathVariable("user-id") Integer id){
+      return userService.InactiveAccount(id);
     }
 }
